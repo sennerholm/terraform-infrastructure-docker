@@ -17,7 +17,7 @@ su-exec go ssh -T -oStrictHostKeyChecking=no git@github.com || true
 # Copy (and chown /my-ssh-keys if exists)
 if [ -f /my-ssh-keys/id_dsa -o -f /my-ssh-keys/id_rsa ]; then
 	cp /my-ssh-keys/id_* ~go/.ssh
-	chown 600 ~go/.ssh/id_*
+	chmod 600 ~go/.ssh/id_*
 	chown go:go ~go/.ssh/id_*
 fi
 
