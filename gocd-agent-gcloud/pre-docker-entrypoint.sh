@@ -16,6 +16,8 @@ if [ -f /my-ssh-keys/id_dsa -o -f /my-ssh-keys/id_rsa ]; then
 	chmod 600 ~go/.ssh/id_*
 	chown go:go ~go/.ssh/id_*
 fi
+# Change owner of docker socket
+chown go:go /var/run/docker.sock
 
 # We need to have kubectl env as GO User
 for i in `env | grep KUBER`; do echo export "$i" >> /etc/profile.d/kubernetes.sh; done
