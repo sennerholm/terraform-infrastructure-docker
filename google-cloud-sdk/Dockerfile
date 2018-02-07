@@ -7,7 +7,7 @@ RUN apt-get -y install unzip && \
     unzip /tmp/terraform.zip && \
     cp /tmp/terraform /usr/local/bin && \
     chmod a+x /usr/local/bin/terraform && \
-    apt-get remove unzip && \
+    apt-get -y remove unzip && \
     apt-get clean && \
     rm /tmp/terraform /tmp/terraform.zip
 # Installing terragrunt
@@ -16,3 +16,7 @@ RUN cd /tmp && \
     cp /tmp/terragrunt /usr/local/bin && \
     chmod a+x /usr/local/bin/terragrunt && \
     rm /tmp/terragrunt 
+# Installing Docker
+RUN    curl -L -o /tmp/docker.tgz https://get.docker.com/builds/Linux/x86_64/docker-17.03.1-ce.tgz && \
+  tar -xz -C /tmp -f /tmp/docker.tgz && \
+  mv /tmp/docker/* /usr/bin
