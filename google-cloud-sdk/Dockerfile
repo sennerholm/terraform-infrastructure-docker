@@ -16,3 +16,9 @@ RUN cd /tmp && \
     cp /tmp/terragrunt /usr/local/bin && \
     chmod a+x /usr/local/bin/terragrunt && \
     rm /tmp/terragrunt 
+# Installing OPA
+RUN cd /tmp && \
+    curl -o /tmp/opa -L /tmp/opa https://github.com/open-policy-agent/opa/releases/download/v0.17.1/opa_linux_amd64 && \
+    cp /tmp/opa /usr/local/bin && \
+    chmod a+x /usr/local/bin/opa && \
+    rm /tmp/opa
