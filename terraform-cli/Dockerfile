@@ -1,4 +1,7 @@
-FROM docker.io/hashicorp/terraform:1.15.5 AS provider-downloader
+# renovate: datasource=docker depName=docker.io/hashicorp/terraform
+ARG TERRAFORM_VERSION=1.15.5
+
+FROM docker.io/hashicorp/terraform:${TERRAFORM_VERSION} AS provider-downloader
 
 WORKDIR /tmp/tf-init
 
@@ -19,7 +22,7 @@ EOF
 
 RUN terraform providers mirror /tmp/provider-mirror
 
-FROM docker.io/hashicorp/terraform:1.15.5
+FROM docker.io/hashicorp/terraform:${TERRAFORM_VERSION}
 
 COPY --from=provider-downloader /tmp/provider-mirror /usr/local/share/terraform/plugins
 

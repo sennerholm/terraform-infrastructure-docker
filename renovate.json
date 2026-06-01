@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "regexManagers": [
+    {
+      "fileMatch": ["terraform-cli/Dockerfile"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\nARG TERRAFORM_VERSION=(?<currentValue>[^\\s]+)"
+      ]
+    }
+  ]
+}
