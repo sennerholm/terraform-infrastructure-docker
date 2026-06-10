@@ -12,7 +12,8 @@
       "fileMatch": ["coder/Dockerfile"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\nARG CODER_VERSION=(?<currentValue>[^\\s]+)"
-      ]
+      ],
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     },
     {
       "fileMatch": ["workspace-base/Dockerfile"],
