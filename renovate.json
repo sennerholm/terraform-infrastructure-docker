@@ -7,6 +7,19 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\nARG TERRAFORM_VERSION=(?<currentValue>[^\\s]+)"
       ]
+    },
+    {
+      "fileMatch": ["coder/Dockerfile"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\nARG CODER_VERSION=(?<currentValue>[^\\s]+)"
+      ]
+    },
+    {
+      "fileMatch": ["workspace-base/Dockerfile"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[^\\s]+) depName=(?<depName>[^\\s]+)\\nARG CODE_SERVER_VERSION=(?<currentValue>[^\\s]+)"
+      ],
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     }
   ]
 }
