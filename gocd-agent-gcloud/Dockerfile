@@ -1,4 +1,4 @@
-FROM gocd/gocd-agent-ubuntu-16.04:v17.9.0
+FROM gocd/gocd-agent-ubuntu-16.04:v17.12.0
 MAINTAINER mikael@sennerholm.net
 # Adding Google tools
 RUN apt-get -y install sudo lsb-release && \ 
