@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 # renovate: datasource=github-releases depName=coder/code-server
-ARG CODE_SERVER_VERSION=4.96.4
+ARG CODE_SERVER_VERSION=4.135.0
 
 RUN apt-get update && apt-get install -y \
         curl \
