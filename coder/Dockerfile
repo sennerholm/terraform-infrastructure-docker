@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=ghcr.io/coder/coder
-ARG CODER_VERSION=v2.34.1
+ARG CODER_VERSION=v2.37.0
 
 FROM ghcr.io/coder/coder:${CODER_VERSION} AS provider-downloader
 
