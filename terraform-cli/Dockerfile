@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=docker.io/hashicorp/terraform
-ARG TERRAFORM_VERSION=1.15.5
+ARG TERRAFORM_VERSION=1.16.1
 
 FROM docker.io/hashicorp/terraform:${TERRAFORM_VERSION} AS provider-downloader
 
